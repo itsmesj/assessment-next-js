@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaUser, FaChevronDown, FaBars } from 'react-icons/fa';
+import { FaUser, FaChevronDown, FaBars, FaSearch } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo Section */}
             <div className="flex items-center">
-              <div className="flex-shrink-0 mx-16">
+              <div className="flex-shrink-0 mx-4 sm:mx-8 md:mx-16">
                 <Link href="/" className="flex items-center space-x-2">
                   <span className="text-5xl font-bold">V</span>
                   <div className="flex flex-col items-start">
@@ -29,16 +29,14 @@ const Navbar = () => {
               </div>
 
               {/* Search Bar */}
-              <div className="flex items-center bg-white rounded-full overflow-hidden mx-16">
+              <div className="flex items-center bg-white rounded-full overflow-hidden mx-4 sm:mx-8 md:mx-16 flex-1">
                 <button className="bg-white text-black p-2 rounded-l-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fillRule="evenodd" d="M13.78 12.22a8 8 0 111.41-1.41l4.35 4.35a1 1 0 01-1.42 1.42l-4.34-4.35zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
-                  </svg>
+                  <FaSearch className="w-5 h-5" />
                 </button>
                 <input
                   type="text"
                   placeholder="Search Creator/Product"
-                  className="p-2 pl-4 pr-2 w-56 text-black bg-transparent border-none focus:outline-none"
+                  className="p-2 pl-4 pr-2 w-full text-black bg-transparent border-none focus:outline-none"
                 />
               </div>
             </div>
@@ -50,8 +48,8 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Navbar Links */}
-            <div className={`md:flex items-center space-x-4 ${isMenuOpen ? 'flex' : 'hidden'} md:block`}>
+            {/* Navbar Links (Desktop) */}
+            <div className="hidden md:flex items-center space-x-4">
               <Link href="/" className="text-white hover:bg-white hover:text-black rounded-lg px-2 py-1 font-semibold">
                 Fav Creators
               </Link>
@@ -68,7 +66,7 @@ const Navbar = () => {
 
             {/* Profile Dropdown for Desktop */}
             <div className="hidden md:flex items-center space-x-2 mr-[4.5rem]">
-              <button className="flex items-center bg-white text-black px-5  py-2 rounded-full">
+              <button className="flex items-center bg-white text-black px-5 py-2 rounded-full">
                 <FaUser className="mr-2" />
                 <FaChevronDown className="ml-2" />
               </button>
@@ -76,7 +74,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Dropdown Menu (conditionally render based on profile dropdown state) */}
+        {/* Dropdown Menu (Mobile) */}
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="flex flex-col items-center space-y-4 mt-4">

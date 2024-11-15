@@ -4,9 +4,9 @@ import heroimg from '../public/hero.png'; // Ensure to use the correct file path
 
 const Hero = () => {
   return (
-    <div className="mx-auto my-[4rem] px-4 lg:px-[8.6rem] flex flex-col lg:flex-row justify-between items-center">
+    <div className="mx-auto my-[3rem] px-4 lg:px-[8.6rem] flex flex-col lg:flex-row justify-between items-center">
       {/* Left side with text */}
-      <div className="text-left lg:w-1/2 mb-8 lg:mb-0">
+      <div className="text-left lg:w-1/2 mb-4 lg:mb-0">
         <div className="my-8">
           <span className="text-black bg-white py-1 px-3 rounded-lg text-4xl sm:text-5xl font-semibold">One</span>
           <span className="text-black bg-white mx-4 py-1 px-3 rounded-lg text-4xl sm:text-5xl font-semibold">Stop</span> <br />

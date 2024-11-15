@@ -23,7 +23,7 @@ const Navbar = () => {
                   <span className="text-5xl font-bold">V</span>
                   <div className="flex flex-col items-start">
                     <span className="text-2xl font-bold">YB</span>
-                    <span className="text-[12px] font-light">STORE</span>
+                    <span className="text-[10px] font-bold">STORE</span>
                   </div>
                 </Link>
               </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
             </div>
 
             {/* Profile Dropdown for Desktop */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2 mr-[4.5rem]">
               <button className="flex items-center bg-white text-black px-5  py-2 rounded-full">
                 <FaUser className="mr-2" />
                 <FaChevronDown className="ml-2" />

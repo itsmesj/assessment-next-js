@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import heroimg from '../public/hero.png'; // Ensure to use the correct file path with extension
 
 const Hero = () => {
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
           <span className="text-black bg-[#00DC82] mx-4 py-1 px-3 rounded-lg text-4xl sm:text-5xl font-semibold">Influencers</span>
         </div>
         <div className='font-semibold text-xl sm:text-3xl mb-6'>
-          "Unleash Your Influence: Sell<br />Itenaries, Build Your Brand,<br />Create Merch, and Share<br />Content - All in One Hub."
+          &quot;Unleash Your Influence: Sell<br />Itenaries, Build Your Brand,<br />Create Merch, and Share<br />Content - All in One Hub.&quot;
         </div>
         <div>
           <button className='bg-[#00DC82] text-black px-4 py-2 rounded-xl text-center font-semibold'>Demo Store</button>
@@ -28,7 +29,14 @@ const Hero = () => {
       </div>
 
       {/* Right side with image */}
-      <div className="w-full lg:w-1/2 bg-[url('/images/hero.png')] bg-cover bg-center h-80 lg:h-auto"></div>
+      <div className="lg:w-1/2">
+        <Image
+          src={heroimg}
+          alt='hero-img'
+          width={900} height={700}
+          layout="intrinsic" // Makes the image responsive and scale accordingly
+        />
+      </div>
     </div>
   );
 }
